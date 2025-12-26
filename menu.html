@@ -1,235 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pollito Chic Menu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fffaf2;
-      color: #333;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Pollito Chic Menu</title>
 
-    header {
-      background-color: #40b4e5; /* Azul del logo */
-      color: #fff;
-      text-align: center;
-      padding: 20px 0;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    header img {
-      width: 140px;
-      height: auto;
-    }
+<style>
+/* ---------- GLOBAL ---------- */
+:root {
+  --blue:#3DB8E8;
+  --fuchsia:#E61C72;
+  --mustard:#FBD32A;
+  --bg:#111;
+  --muted: rgba(255,255,255,0.08);
+}
+*{box-sizing:border-box}
+body {
+  margin:0;
+  font-family:"Montserrat",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  background-color:var(--bg);
+  color:#f7f7f7;
+  line-height:1.5;
+}
 
-    h1 {
-      color: #f7d038; /* Amarillo */
-      margin: 10px 0 5px;
-      letter-spacing: 1px;
-    }
+/* ---------- HEADER ---------- */
+header {
+  position:relative;
+  min-height:220px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:28px 20px;
+  background-image: url("images/pollitofood1.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  color:#fff;
+}
+header::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(17,17,17,0.55);
+}
+.header-logo-left,
+.header-logo-right {
+  position:absolute;
+  top:18px;
+  width:86px;
+  height:auto;
+  z-index:3;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.6));
+}
+.header-logo-left { left:18px; }
+.header-logo-right { right:18px; }
+.header-center {
+  position:relative;
+  z-index:4;
+  text-align:center;
+}
+.brand-title {
+  font-family:"Poppins",sans-serif;
+  color:var(--fuchsia);
+  font-size:2.1rem;
+  letter-spacing:2px;
+  margin:0;
+  text-transform:uppercase;
+}
+.brand-sub { color:#fff; opacity:0.9; margin-top:6px; }
 
-    nav {
-      background-color: #e91e63; /* Rosa */
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 12px;
-    }
+/* ---------- NAV ---------- */
+nav {
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  padding:12px 8px;
+  border-bottom:1px solid rgba(255,255,255,0.04);
+}
+nav a {
+  color:var(--mustard);
+  font-weight:600;
+  text-decoration:none;
+  transition:.2s;
+}
+nav a:hover {
+  color:var(--fuchsia);
+  transform:translateY(-3px);
+}
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1em;
-      transition: color 0.3s;
-    }
+/* Floating avatar */
+.floating-avatar {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--mustard);
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 1000;
+}
+.floating-avatar:hover {
+  transform: scale(1.1);
+}
 
-    nav a:hover {
-      color: #f7d038; /* Amarillo al pasar el mouse */
-    }
+/* ---------- SECTIONS ---------- */
+main {
+  max-width:1100px;
+  margin:0 auto;
+  padding:22px;
+}
+section {
+  padding:28px 12px;
+  margin-bottom:6px;
+}
+h2 {
+  color:var(--fuchsia);
+  border-bottom:3px solid var(--mustard);
+  padding-bottom:6px;
+  text-transform:uppercase;
+}
+h3 { color:var(--mustard); margin-top:18px; }
 
-    section {
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
-    }
+/* ---------- MENU LIST ---------- */
+ul.menu {
+  list-style:none;
+  padding:0;
+  margin:12px 0 0 0;
+}
+ul.menu li {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.26);
+  padding:12px 14px;
+  margin-bottom:10px;
+  border-radius:10px;
+  font-size:1.05rem;
+  border:2px solid transparent;
+}
+ul.menu li:hover {
+  transform:translateY(-4px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.55);
+  border-color:rgba(251,211,42,0.12);
+}
 
-    h2 {
-      color: #e91e63;
-      border-bottom: 3px solid #40b4e5;
-      display: inline-block;
-      padding-bottom: 5px;
-      margin-bottom: 20px;
-    }
+/* 3-column items */
+.three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+}
+.dish {
+  font-weight: 600;
+}
+.note {
+  
+  display: block;
+  text-align: center;
+  font-style: italic;
+  color: var(--blue);
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+.price {
+  text-align: right;
+  font-weight: bold;
+  color:var(--mustard);
+}
 
-    h3 {
-      color: #40b4e5;
-      margin-top: 30px;
-    }
+/* ---------- FOOTER ---------- */
+footer {
+  margin-top:34px;
+  padding:16px 10px;
+  text-align:center;
+  background:linear-gradient(90deg,var(--blue), #26a7d6);
+  color:#fff;
+}
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      font-size: 1.1em;
-      margin: 10px 0;
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px dashed #ddd;
-      padding-bottom: 5px;
-    }
-
-    .price {
-      color: #e91e63;
-      font-weight: 600;
-    }
-
-    .note {
-      font-size: 0.9em;
-      color: #555;
-      display: block;
-      margin: 5px 0 10px 0;
-    }
-
-    footer {
-      text-align: center;
-      background-color: #40b4e5;
-      color: white;
-      padding: 10px;
-      font-size: 0.9em;
-      margin-top: 40px;
-    }
-  </style>
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:720px){
+  .header-logo-left, .header-logo-right { width:64px; top:10px; }
+  .brand-title { font-size:1.4rem; }
+  ul.menu li { font-size:1rem; padding:10px; }
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <img src="pollito logo.png" alt="Pollito Chic Logo">
-    <h1>Pollito Chic Menu</h1>
-    <p>Est. 2021</p>
-  </header>
+<header>
+  <img src="images/pollitologo.png" alt="Pollito Chic logo" class="header-logo-left">
+  <div class="header-center">
+    <h1 class="brand-title">Pollito Chic Menu</h1>
+    <div class="brand-sub">Est. 2021 — Fresh • Crispy • Chic</div>
+  </div>
+  <img src="images/fornologo.jpeg" alt="Secondary logo" class="header-logo-right">
+</header>
 
-  <nav>
-    <a href="#appetizers">Appetizers</a>
-    <a href="#main">Main Dishes</a>
-    <a href="#pizzas">Pizzas</a>
-    <a href="#sides">Sides</a>
-    <a href="#drinks">Drinks</a>
-  </nav>
+<img src="images/cara.JPG" alt="Foto circular" class="floating-avatar">
 
-  <!-- ==================== APPETIZERS ==================== -->
-  <section id="appetizers">
-    <h2>Appetizers</h2>
-    <ul>
-      <li>Chiks <span class="price">$12.00</span></li>
-      <li>Mozzarella Sticks <span class="price">$12.00</span></li>
-      <li>Fritto Misto <span class="price">$24.00</span></li>
-      <li>Fried Zucchini <span class="price">$10.00</span></li>
-      <li>Market Eggplant <span class="price">$15.00</span></li>
-      <li>Oven Roasted Octopus Escabeche <span class="price">$17.00</span></li>
-      <li>Spiced Chicken Wings <span class="price">$12.00</span></li>
-    </ul>
-  </section>
+<nav>
+  <a href="#appetizers">Appetizers</a>
+  <a href="#main">Main Dishes</a>
+  <a href="#pizzas">Pizzas</a>
+  <a href="#desserts">Desserts</a>
+  <a href="#sides">Sides</a>
+  <a href="#drinks">Drinks</a>
+  <a href="#cocktails">Cocktails</a>
+  <a href="Draft Beers.html">Draft Beers</a>
+</nav>
 
-  <!-- ==================== MAIN DISHES ==================== -->
-  <section id="main">
-    <h2>Main Dishes</h2>
+<!-- MAIN CONTENT (solo uno) -->
+<main>
 
-    <h3>Fried Chicken</h3>
-    <ul>
-      <li>Fried Chicken Bites <span class="price">$8.35</span></li>
-      <li>Fried Chicken Bites with Fries <span class="price">$10.00</span></li>
-      <li>Half Fried Chicken <span class="price">$22.45</span></li>
-      <li>Whole Fried Chicken <span class="price">$40.00</span></li>
-      <li class="note">Includes 2 sides (Truffle sides $4.00 extra)</li>
-    </ul>
+<!-- APPETIZERS -->
+<section id="appetizers">
+  <h2>Appetizers</h2>
+  <ul class="menu">
+    <li>Chiks <span class="price">$13.00</span></li>
+    <li>Mozzarella Sticks <span class="price">$13.00</span></li>
+    <li>Fritto Misto <span class="price">$24.00</span></li>
+    <li>Fried Zucchini <span class="price">$14.00</span></li>
+    <li>Market Eggplant <span class="price">$16.00</span></li>
+    <li>Oven Roasted Octopus Escabeche <span class="price">$19.00</span></li>
+    <li>Spiced Chicken Wings <span class="price">$13.00</span></li>
+    <li>Potato Cream with Cheddar Cheese & Bacon<span class="price">$6.00</span></li>
+    <li>Chicken Soup with vegetables<span class="price">$8.00</span></li>
 
-    <h3>Roasted Chicken</h3>
-    <ul>
-      <li>Half Roasted Chicken <span class="price">$18.00</span></li>
-      <li>Whole Roasted Chicken <span class="price">$36.00</span></li>
-      <li>Fried Chicken Sandwich <span class="price">$12.69</span></li>
-      <li>Roasted Chicken Salad <span class="price">$17.00</span></li>
-      <li class="note">Includes 2 sides (Truffle sides $4.00 extra)</li>
-      <li class="note">Includes 4 sides (Truffle sides $4.00 extra)</li>
-    </ul>
-  </section>
+  </ul>
+</section>
 
-  <!-- ==================== PIZZAS ==================== -->
-  <section id="pizzas">
-    <h2>Pizzas</h2>
-    <ul>
-      <li>Cheese Pizza <span class="price">$12.00</span></li>
-      <li>Pepperoni Pizza <span class="price">$14.00</span></li>
-      <li>Margarita Pizza <span class="price">$14.00</span></li>
-      <li>Speck Pizza <span class="price">$14.00</span></li>
-      <li>Burrata Pizza <span class="price">$16.00</span></li>
-      <li>Mushrooms & Onion Pizza (bechamel sauce) <span class="price">$16.00</span></li>
-      <li>La Quinta Pizza <span class="price">$18.00</span></li>
-    </ul>
-  </section>
+<!-- MAIN DISHES -->
+<section id="main">
+  <h2>Main Dishes</h2>
+  <h3>Fried Chicken</h3>
+  <ul class="menu">
+    <li>Fried Chicken Bites <span class="price">$9.00</span></li>
+    <li>Fried Chicken Bites with Fries <span class="price">$11.00</span></li>
+    <li>Fried Chicken Sandwich with Fries <span class="price">$13.00</span></li>
+    <li class="three-col">
+      <span class="dish">Half Fried Chicken</span>
+      <span class="note">Includes 2 sides</span>
+      <span class="price">$23.45</span>
+    </li>
+    <li class="three-col">
+      <span class="dish">Whole Fried Chicken</span>
+      <span class="note">Includes 4 sides</span>
+      <span class="price">$41.00</span>
+    </li>
+  </ul>
 
-  <!-- ==================== SIDES ==================== -->
-  <section id="sides">
-    <h2>Sides</h2>
-    <ul>
-      <li>French Fries <span class="price">$5.00</span></li>
-      <li>Parmesan Truffle Fries <span class="price">$9.00</span></li>
-      <li>Confit Potatoes <span class="price">$6.00</span></li>
-      <li>Potato Puree <span class="price">$5.00</span></li>
-      <li>Rice & Beans <span class="price">$4.00</span></li>
-      <li>Mamposteao <span class="price">$5.00</span></li>
-      <li>Mac & Cheese <span class="price">$5.00</span></li>
-      <li>Truffle Mac & Cheese <span class="price">$9.00</span></li>
-      <li>Cornbread Biscuit <span class="price">$5.00</span></li>
-      <li>Butter Biscuit <span class="price">$5.00</span></li>
-      <li>Sautéed Veggies <span class="price">$5.00</span></li>
-      <li>White Rice <span class="price">$2.50</span></li>
-      <li>Petite Salad <span class="price">$7.00</span></li>
-      <li>Tostones <span class="price">$5.00</span></li>
-      <li>Polenta with Mushrooms <span class="price">$12.00</span></li>
-    </ul>
-  </section>
+  <h3>Roasted Chicken</h3>
+  <ul class="menu">
+    <li class="three-col">
+      <span class="dish">Half Roasted Chicken</span>
+      <span class="note">Includes 2 sides</span>
+      <span class="price">$19.00</span>
+    </li>
+    <li class="three-col">
+      <span class="dish">Whole Roasted Chicken</span>
+      <span class="note">Includes 4 sides</span>
+      <span class="price">$38.00</span>
+    </li>
+    <li>Roasted Chicken Salad <span class="price">$18.00</span></li>
+  </ul>
+</section>
 
-  <!-- ==================== DRINKS ==================== -->
-  <section id="drinks">
-    <h2>Drinks</h2>
+<!-- PIZZAS -->
+<section id="pizzas">
+  <h2>Pizzas</h2>
+  <ul class="menu">
+    <li>Cheese Pizza <span class="price">$12.00</span></li>
+    <span class="note">Classic Cheese pizza with house made pomodoro sauce & fresh mozzarella</span>
 
-    <h3>Juices</h3>
-    <ul>
-      <li>Lemonade <span class="price">$5.00</span> <span class="note">(Ask for flavors)</span></li>
-      <li>Passion Fruit <span class="price">$5.00</span></li>
-      <li>Orange <span class="price">$5.00</span></li>
-      <li>Grapefruit <span class="price">$5.00</span></li>
-      <li>Pink Grapefruit <span class="price">$5.00</span></li>
-    </ul>
+    <li>Pepperoni Pizza <span class="price">$15.00</span></li>
+    <span class="note">Classic Pepperoni with house made pomodoro sauce & fresh mozzarella (better with honey 😉)</span>
 
-    <h3>Beers</h3>
-    <ul>
-      <li>Medalla <span class="price">$3.00</span></li>
-      <li>Magna <span class="price">$5.00</span></li>
-      <li>Alhambra <span class="price">$5.00</span></li>
-      <li>Michelob <span class="price">$5.00</span></li>
-      <li>Heineken <span class="price">$4.00</span></li>
-      <li>Heineken Silver <span class="price">$4.50</span></li>
-      <li>Estrella Galicia <span class="price">$6.00</span></li>
-      <li>Estrella Damm <span class="price">$6.00</span></li>
-      <li>Stella <span class="price">$5.75</span></li>
-      <li>Peroni <span class="price">$5.75</span></li>
-      <li>Corona <span class="price">$3.75</span></li>
-    </ul>
-  </section>
+    <li>Margarita Pizza <span class="price">$14.50</span></li>
+    <span class="note">Fresh basil with 24-hour confit tomatoes, fresh mozzarella & pomodoro sauce</span>
 
-  <footer>
-    © 2025 Pollito Chic · All Rights Reserved
-  </footer>
+    <li>Speck Pizza <span class="price">$16.00</span></li>
+    <span class="note">Fresh arugula with spek, fresh mozzarella & pomodoro sauce</span>
+
+    <li>Burrata Pizza <span class="price">$16.50</span></li>
+    <span class="note">Fresh Burrata with arugula, confit tomatoes, pomodoro sauce, mozzarella & pesto</span>
+
+    <li>Mushrooms & Onion Pizza <span class="price">$16.00</span></li>
+    <span class="note">Bechamel base, mozzarella, mushrooms & caramelized onions</span>
+
+    <li>Make your own Pizza<span class="price">$14.00</span></li>
+    <span class="note">Meats: Pepperoni, Spanish Sausage, Ground Pork, Nduja , Speck ,Bacon(extra $3.00) & Chicken.</span><br>
+    <span class="note">Vegetables: Caramelized Onions , Mushrooms , Black Olives , Sun Dried Tomatos , Confit Tomatos & Spinach. </span><br>
+    <span class="note">Cheesses: Mozzarella, Burrata , Goat Cheese, Cheddar , Monterrrey, Swiss </span><br>
+  </ul>
+</section>
+
+<!-- SIDES -->
+<section id="sides">
+  <h2>Sides</h2>
+  <ul class="menu">
+    <li>French Fries <span class="price">$5.00</span></li>
+    <li>Parmesan Truffle Fries <span class="price">$9.00</span></li>
+    <li>Cole Slaw <span class="price">$5.00</span></li>
+    <li>Confit Potatoes <span class="price">$6.00</span></li>
+    <li>Potato Puree <span class="price">$6.00</span></li>
+    <li>Rice & Beans <span class="price">$5.00</span></li>
+    <li>Mamposteao <span class="price">$6.00</span></li>
+    <li>Mac & Cheese <span class="price">$5.50</span></li>
+    <li>Truffle Mac & Cheese <span class="price">$9.00</span></li>
+    <li>Bacon Mac & Cheese<span class="price">$9.00</span></li>
+    <li>Cornbread Biscuit <span class="price">$5.00</span></li>
+    <li>Butter Biscuit <span class="price">$5.00</span></li>
+    <li>Sautéed Veggies <span class="price">$6.00</span></li>
+    <li>White Rice <span class="price">$3.00</span></li>
+    <li>Pink Beans <span class="price">$4.00</span></li>
+    <li>Petite Salad <span class="price">$7.00</span></li>
+    <li>Tostones(Platano o Pana)<span class="price">$5.00</span></li>
+    <li>Polenta with Mushrooms <span class="price">$12.00</span></li>
+    <li>Risotto<span class="price">$9.00</span></li>
+    <li>Cesar Salad<span class="price">7.00</span></li>
+    <li>Sautte Mushrooms<span class="price">$8.00</span></li>
+  </ul>
+</section>
+
+
+<!-- DESSERTS -->
+<section id="desserts">
+  <h2>Desserts</h2>
+  <ul class="menu">
+    <li>Guava & Cream Cheese Pudin<span class="price">$9.00</span></li>
+    <li>Brownie Sundae<span class="price">$8.00</span></li>
+    <li>Churros with Ice Cream<span class="price">$9.00</span></li>
+    <li>Crumbled Apple Pie Sundae<span class="price">$8.00</span></li>
+    <li>Cookie Monster<span class="price">$9.00</span></li>
+    <li>Vanilla Flan<span class="price">$9.00</span></li>
+    <li>Coconut Flan<span class="price">$9.00</span></li>
+    <li>Biscoff Cheesecake<span class="price">$9.00</span></li>
+    <li>Biscuit Sundae<span class="price">$9.00</span></li>
+    <li>Traditional Cake with Ice Cream<span class="price">$8.00</span></li>
+    <li>Vanilla Ice Cream Scoop<span class="price">$5.00</span></li>
+  </ul>
+</section>
+
+<!-- DRINKS -->
+<section id="drinks">
+  <h2>Drinks</h2>
+  <h3>Water & Soda</h3>
+  <ul class="menu">
+    <li>Solan de Cabras Still Water <span class="price">$5.00</span></li>
+    <li>Solan de Cabras Family Size Still Water <span class="price">$9.00</span></li>
+    <li>Solan de Cabras Gas Water <span class="price">$8.00</span></li>
+    <li>Perrier<span class="price">$4.00</span></li>
+    <li>St.Pellegrino <span class="price">$4.00</span></li>
+    <li>Coca-cola<span class="price">$3.00</span></li>
+    <li>Coca-cola diet <span class="price">$3.00</span></li>
+    <li>Coca-cola zero <span class="price">$3.00</span></li>
+    <li>Sprite<span class="price">$3.00</span></li>
+    <li>Sprite zero <span class="price">$3.00</span></li>
+    <li>Ginger Ale<span class="price">$5.00</span></li>
+    <li>Ginger Beer<span class="price">$6.00</span></li>
+  </ul>
+
+  <h3>Juices</h3>
+  <ul class="menu">
+    <li>Lemonade <span class="price">$5.00</span></li>
+    <span class="note">Ask for flavors $2.00</span>
+    <li>Passion Fruit <span class="price">$5.00</span></li>
+    <li>Orange <span class="price">$5.00</span></li>
+    <li>Grapefruit <span class="price">$5.00</span></li>
+    <li>Pink Grapefruit <span class="price">$5.00</span></li>
+    <li>Fruit Punch <span class="price">$5.00</span></li>
+    <li>Pineapple<span class="price">$4.00</span></li>
+    <li>Cranberry<span class="price">$3.50</span></li>
+    <li>Coconut Water<span class="price">$6.00</span></li>
+  </ul>
+
+  <h3>Beers</h3>
+  <ul class="menu">
+    <li>Medalla <span class="price">$3.50</span></li>
+    <li>Magna <span class="price">$6.00</span></li>
+    <li>Alhambra <span class="price">$5.00</span></li>
+    <li>Michelob <span class="price">$5.00</span></li>
+    <li>Heineken <span class="price">$4.25</span></li>
+    <li>Heineken 0.0<span class="price">$4.00</span></li>
+    <li>Heineken Silver <span class="price">$5.00</span></li>
+    <li>Estrella Galicia <span class="price">$6.00</span></li>
+    <li>Estrella Damm <span class="price">$6.00</span></li>
+    <li>Stella <span class="price">$6.00</span></li>
+    <li>Peroni <span class="price">$6.00</span></li>
+    <li>Mahou<span class="price">$6.00</span></li>
+    <li>Corona <span class="price">$4.00</span></li>
+  </ul>
+</section>
+
+<!-- COCKTAILS -->
+<section id=" cocktails">
+  <h2>Cocktails</h2>
+  <ul class="menu">
+    <li>Margarita <span class="note">*Prices may vary depending on the brand*</span></li>
+    <li>Mojito  <span class="note">Ask for flavors (+$2.00)</span><span class="price">$11.00</span></li>
+    <li>Bloody Mary<span class="price">$11.00</span></li>
+    <li>Cosmopolitan<span class="price">$12.00</span></li>
+    <li>Moscow Mule<span class="price">$10.00</span></li>
+    <li>London Mule<span class="price">$12.00</span></li>
+    <li>Tom Collins<span class="price">$11.00</span></li>
+    <li>El Guaraguao <span class="note">House cocktail</span><span class="price">$11.00</span></li>
+    <li>Negroni<span class="price">$12.00</span></li>
+    <li>Old Fashioned<span class="price">$12.00</span></li>
+    <li>Paloma<span class="price">$12.00</span></li>
+    <li>Martini<span class="note">*Prices may vary depending on the brand*</span></li>
+    <li>Manhattan<span class="price">$14.00</span></li>
+    <li>Mimosa<span class="price">$12.00</span></li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  © 2025 <strong>Pollito Chic</strong> · All Rights Reserved
+</footer>
 
 </body>
 </html>
