@@ -95,8 +95,8 @@ nav a:hover {
   position: fixed;
   top: 120px;
   right: 20px;
-  width: 30px;
-  height: 30px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--mustard);
@@ -162,9 +162,13 @@ ul.menu li:hover {
   font-weight: 600;
 }
 .note {
+  
+  display: block;
   text-align: center;
   font-style: italic;
-  color: #bbb;
+  color: var(--blue);
+  opacity: 0.9;
+  font-size: 0.95rem;
 }
 .price {
   text-align: right;
@@ -207,10 +211,11 @@ footer {
   <a href="#appetizers">Appetizers</a>
   <a href="#main">Main Dishes</a>
   <a href="#pizzas">Pizzas</a>
+  <a href="#desserts">Desserts</a>
   <a href="#sides">Sides</a>
   <a href="#drinks">Drinks</a>
   <a href="#cocktails">Cocktails</a>
-  <a href="Draft_Beers.html">Draft Beers</a>
+  <a href="Draft Beers.html">Draft Beers</a>
 </nav>
 
 <!-- MAIN CONTENT (solo uno) -->
@@ -220,13 +225,16 @@ footer {
 <section id="appetizers">
   <h2>Appetizers</h2>
   <ul class="menu">
-    <li>Chiks <span class="price">$12.00</span></li>
-    <li>Mozzarella Sticks <span class="price">$12.00</span></li>
+    <li>Chiks <span class="price">$13.00</span></li>
+    <li>Mozzarella Sticks <span class="price">$13.00</span></li>
     <li>Fritto Misto <span class="price">$24.00</span></li>
-    <li>Fried Zucchini <span class="price">$12.00</span></li>
-    <li>Market Eggplant <span class="price">$15.00</span></li>
-    <li>Oven Roasted Octopus Escabeche <span class="price">$17.00</span></li>
-    <li>Spiced Chicken Wings <span class="price">$12.00</span></li>
+    <li>Fried Zucchini <span class="price">$14.00</span></li>
+    <li>Market Eggplant <span class="price">$16.00</span></li>
+    <li>Oven Roasted Octopus Escabeche <span class="price">$19.00</span></li>
+    <li>Spiced Chicken Wings <span class="price">$13.00</span></li>
+    <li>Potato Cream with Cheddar Cheese & Bacon<span class="price">$6.00</span></li>
+    <li>Chicken Soup with vegetables<span class="price">$8.00</span></li>
+
   </ul>
 </section>
 
@@ -235,17 +243,18 @@ footer {
   <h2>Main Dishes</h2>
   <h3>Fried Chicken</h3>
   <ul class="menu">
-    <li>Fried Chicken Bites <span class="price">$8.35</span></li>
-    <li>Fried Chicken Bites with Fries <span class="price">$10.00</span></li>
+    <li>Fried Chicken Bites <span class="price">$9.00</span></li>
+    <li>Fried Chicken Bites with Fries <span class="price">$11.00</span></li>
+    <li>Fried Chicken Sandwich with Fries <span class="price">$13.00</span></li>
     <li class="three-col">
       <span class="dish">Half Fried Chicken</span>
       <span class="note">Includes 2 sides</span>
-      <span class="price">$22.25</span>
+      <span class="price">$23.45</span>
     </li>
     <li class="three-col">
       <span class="dish">Whole Fried Chicken</span>
       <span class="note">Includes 4 sides</span>
-      <span class="price">$40.00</span>
+      <span class="price">$41.00</span>
     </li>
   </ul>
 
@@ -254,14 +263,14 @@ footer {
     <li class="three-col">
       <span class="dish">Half Roasted Chicken</span>
       <span class="note">Includes 2 sides</span>
-      <span class="price">$18.00</span>
+      <span class="price">$19.00</span>
     </li>
     <li class="three-col">
       <span class="dish">Whole Roasted Chicken</span>
       <span class="note">Includes 4 sides</span>
-      <span class="price">$36.00</span>
+      <span class="price">$38.00</span>
     </li>
-    <li>Roasted Chicken Salad <span class="price">$17.00</span></li>
+    <li>Roasted Chicken Salad <span class="price">$18.00</span></li>
   </ul>
 </section>
 
@@ -272,23 +281,25 @@ footer {
     <li>Cheese Pizza <span class="price">$12.00</span></li>
     <span class="note">Classic Cheese pizza with house made pomodoro sauce & fresh mozzarella</span>
 
-    <li>Pepperoni Pizza <span class="price">$14.00</span></li>
+    <li>Pepperoni Pizza <span class="price">$15.00</span></li>
     <span class="note">Classic Pepperoni with house made pomodoro sauce & fresh mozzarella (better with honey 😉)</span>
 
-    <li>Margarita Pizza <span class="price">$14.00</span></li>
+    <li>Margarita Pizza <span class="price">$14.50</span></li>
     <span class="note">Fresh basil with 24-hour confit tomatoes, fresh mozzarella & pomodoro sauce</span>
 
-    <li>Spek Pizza <span class="price">$14.00</span></li>
+    <li>Speck Pizza <span class="price">$16.00</span></li>
     <span class="note">Fresh arugula with spek, fresh mozzarella & pomodoro sauce</span>
 
-    <li>Burrata Pizza <span class="price">$16.00</span></li>
+    <li>Burrata Pizza <span class="price">$16.50</span></li>
     <span class="note">Fresh Burrata with arugula, confit tomatoes, pomodoro sauce, mozzarella & pesto</span>
 
     <li>Mushrooms & Onion Pizza <span class="price">$16.00</span></li>
     <span class="note">Bechamel base, mozzarella, mushrooms & caramelized onions</span>
 
-    <li>La Quinta Pizza <span class="price">$18.00</span></li>
-    <span class="note">All meats: pepperoni, Spanish sausage, ground pork, bacon & chicken</span>
+    <li>Make your own Pizza<span class="price">$14.00</span></li>
+    <span class="note">Meats: Pepperoni, Spanish Sausage, Ground Pork, Nduja , Speck ,Bacon(extra $3.00) & Chicken.</span><br>
+    <span class="note">Vegetables: Caramelized Onions , Mushrooms , Black Olives , Sun Dried Tomatos , Confit Tomatos & Spinach. </span><br>
+    <span class="note">Cheesses: Mozzarella, Burrata , Goat Cheese, Cheddar , Monterrrey, Swiss </span><br>
   </ul>
 </section>
 
@@ -298,25 +309,66 @@ footer {
   <ul class="menu">
     <li>French Fries <span class="price">$5.00</span></li>
     <li>Parmesan Truffle Fries <span class="price">$9.00</span></li>
+    <li>Cole Slaw <span class="price">$5.00</span></li>
     <li>Confit Potatoes <span class="price">$6.00</span></li>
-    <li>Potato Puree <span class="price">$5.00</span></li>
-    <li>Rice & Beans <span class="price">$4.00</span></li>
-    <li>Mamposteao <span class="price">$5.00</span></li>
-    <li>Mac & Cheese <span class="price">$5.00</span></li>
+    <li>Potato Puree <span class="price">$6.00</span></li>
+    <li>Rice & Beans <span class="price">$5.00</span></li>
+    <li>Mamposteao <span class="price">$6.00</span></li>
+    <li>Mac & Cheese <span class="price">$5.50</span></li>
     <li>Truffle Mac & Cheese <span class="price">$9.00</span></li>
+    <li>Bacon Mac & Cheese<span class="price">$9.00</span></li>
     <li>Cornbread Biscuit <span class="price">$5.00</span></li>
     <li>Butter Biscuit <span class="price">$5.00</span></li>
-    <li>Sautéed Veggies <span class="price">$5.00</span></li>
-    <li>White Rice <span class="price">$2.50</span></li>
+    <li>Sautéed Veggies <span class="price">$6.00</span></li>
+    <li>White Rice <span class="price">$3.00</span></li>
+    <li>Pink Beans <span class="price">$4.00</span></li>
     <li>Petite Salad <span class="price">$7.00</span></li>
-    <li>Tostones <span class="price">$5.00</span></li>
+    <li>Tostones(Platano o Pana)<span class="price">$5.00</span></li>
     <li>Polenta with Mushrooms <span class="price">$12.00</span></li>
+    <li>Risotto<span class="price">$9.00</span></li>
+    <li>Cesar Salad<span class="price">7.00</span></li>
+    <li>Sautte Mushrooms<span class="price">$8.00</span></li>
+  </ul>
+</section>
+
+
+<!-- DESSERTS -->
+<section id="desserts">
+  <h2>Desserts</h2>
+  <ul class="menu">
+    <li>Guava & Cream Cheese Pudin<span class="price">$9.00</span></li>
+    <li>Brownie Sundae<span class="price">$8.00</span></li>
+    <li>Churros with Ice Cream<span class="price">$9.00</span></li>
+    <li>Crumbled Apple Pie Sundae<span class="price">$8.00</span></li>
+    <li>Cookie Monster<span class="price">$9.00</span></li>
+    <li>Vanilla Flan<span class="price">$9.00</span></li>
+    <li>Coconut Flan<span class="price">$9.00</span></li>
+    <li>Biscoff Cheesecake<span class="price">$9.00</span></li>
+    <li>Biscuit Sundae<span class="price">$9.00</span></li>
+    <li>Traditional Cake with Ice Cream<span class="price">$8.00</span></li>
+    <li>Vanilla Ice Cream Scoop<span class="price">$5.00</span></li>
   </ul>
 </section>
 
 <!-- DRINKS -->
 <section id="drinks">
   <h2>Drinks</h2>
+  <h3>Water & Soda</h3>
+  <ul class="menu">
+    <li>Solan de Cabras Still Water <span class="price">$5.00</span></li>
+    <li>Solan de Cabras Family Size Still Water <span class="price">$9.00</span></li>
+    <li>Solan de Cabras Gas Water <span class="price">$8.00</span></li>
+    <li>Perrier<span class="price">$4.00</span></li>
+    <li>St.Pellegrino <span class="price">$4.00</span></li>
+    <li>Coca-cola<span class="price">$3.00</span></li>
+    <li>Coca-cola diet <span class="price">$3.00</span></li>
+    <li>Coca-cola zero <span class="price">$3.00</span></li>
+    <li>Sprite<span class="price">$3.00</span></li>
+    <li>Sprite zero <span class="price">$3.00</span></li>
+    <li>Ginger Ale<span class="price">$5.00</span></li>
+    <li>Ginger Beer<span class="price">$6.00</span></li>
+  </ul>
+
   <h3>Juices</h3>
   <ul class="menu">
     <li>Lemonade <span class="price">$5.00</span></li>
@@ -325,41 +377,49 @@ footer {
     <li>Orange <span class="price">$5.00</span></li>
     <li>Grapefruit <span class="price">$5.00</span></li>
     <li>Pink Grapefruit <span class="price">$5.00</span></li>
+    <li>Fruit Punch <span class="price">$5.00</span></li>
+    <li>Pineapple<span class="price">$4.00</span></li>
+    <li>Cranberry<span class="price">$3.50</span></li>
+    <li>Coconut Water<span class="price">$6.00</span></li>
   </ul>
 
   <h3>Beers</h3>
   <ul class="menu">
-    <li>Medalla <span class="price">$3.00</span></li>
-    <li>Magna <span class="price">$5.00</span></li>
+    <li>Medalla <span class="price">$3.50</span></li>
+    <li>Magna <span class="price">$6.00</span></li>
     <li>Alhambra <span class="price">$5.00</span></li>
     <li>Michelob <span class="price">$5.00</span></li>
-    <li>Heineken <span class="price">$4.00</span></li>
-    <li>Heineken Silver <span class="price">$4.50</span></li>
+    <li>Heineken <span class="price">$4.25</span></li>
+    <li>Heineken 0.0<span class="price">$4.00</span></li>
+    <li>Heineken Silver <span class="price">$5.00</span></li>
     <li>Estrella Galicia <span class="price">$6.00</span></li>
     <li>Estrella Damm <span class="price">$6.00</span></li>
-    <li>Stella <span class="price">$5.75</span></li>
-    <li>Peroni <span class="price">$5.75</span></li>
-    <li>Corona <span class="price">$3.75</span></li>
+    <li>Stella <span class="price">$6.00</span></li>
+    <li>Peroni <span class="price">$6.00</span></li>
+    <li>Mahou<span class="price">$6.00</span></li>
+    <li>Corona <span class="price">$4.00</span></li>
   </ul>
 </section>
 
 <!-- COCKTAILS -->
-<section id="cocktails">
+<section id=" cocktails">
   <h2>Cocktails</h2>
   <ul class="menu">
-    <li>Margarita <span class="note">Spicy (+$3.00)</span></li>
-    <li>Mojito <span class="note">Ask for flavors (+$2.00)</span></li>
-    <li>Bloody Mary</li>
-    <li>Cosmopolitan</li>
-    <li>Moscow Mule</li>
-    <li>London Mule</li>
-    <li>Tom Collins</li>
-    <li>El Guaraguao <span class="note">House cocktail</span></li>
-    <li>Negroni</li>
-    <li>Old Fashioned</li>
-    <li>Kentucky Mule</li>
+    <li>Margarita <span class="note">*Prices may vary depending on the brand*</span></li>
+    <li>Mojito  <span class="note">Ask for flavors (+$2.00)</span><span class="price">$11.00</span></li>
+    <li>Bloody Mary<span class="price">$11.00</span></li>
+    <li>Cosmopolitan<span class="price">$12.00</span></li>
+    <li>Moscow Mule<span class="price">$10.00</span></li>
+    <li>London Mule<span class="price">$12.00</span></li>
+    <li>Tom Collins<span class="price">$11.00</span></li>
+    <li>El Guaraguao <span class="note">House cocktail</span><span class="price">$11.00</span></li>
+    <li>Negroni<span class="price">$12.00</span></li>
+    <li>Old Fashioned<span class="price">$12.00</span></li>
+    <li>Paloma<span class="price">$12.00</span></li>
+    <li>Martini<span class="note">*Prices may vary depending on the brand*</span></li>
+    <li>Manhattan<span class="price">$14.00</span></li>
+    <li>Mimosa<span class="price">$12.00</span></li>
   </ul>
-  <p class="note" style="text-align:center;">*Prices may vary depending on the brand*</p>
 </section>
 
 </main>
